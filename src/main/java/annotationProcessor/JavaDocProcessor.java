@@ -8,7 +8,6 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -26,16 +25,9 @@ import javax.lang.model.SourceVersion;
 import javax.lang.model.element.Element;
 import javax.lang.model.element.ExecutableElement;
 import javax.lang.model.element.TypeElement;
-import javax.lang.model.element.TypeParameterElement;
 import javax.lang.model.element.VariableElement;
-import javax.lang.model.type.ExecutableType;
-import javax.lang.model.type.PrimitiveType;
-import javax.lang.model.type.TypeMirror;
-import javax.lang.model.type.TypeVariable;
 import javax.tools.FileObject;
 import javax.tools.StandardLocation;
-
-import afu.org.checkerframework.checker.oigj.qual.Modifier;
 
 import com.google.auto.service.AutoService;
 
@@ -73,6 +65,7 @@ public class JavaDocProcessor extends AbstractProcessor {
 		public List<String> params = new ArrayList<>();
 		public String returns = null;
 
+		@SuppressWarnings("unused")
 		public String getParams() {
 			return params.stream().collect(Collectors.joining("\n"));
 
@@ -124,6 +117,7 @@ public class JavaDocProcessor extends AbstractProcessor {
 			return viewhelper;
 		}
 
+		@SuppressWarnings("unused")
 		private static String getSimpleName(String type) {
 			String name = null;
 			try {

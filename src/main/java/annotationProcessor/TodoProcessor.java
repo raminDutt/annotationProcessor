@@ -50,6 +50,7 @@ public class TodoProcessor extends AbstractProcessor {
 	return true;
     }
 
+    @SuppressWarnings("unused")
     private void ch11Q6B(Set<? extends TypeElement> annotations,
 	    RoundEnvironment roundEnv) {
 	Set<? extends Element> rootElemets = roundEnv.getRootElements();
@@ -119,6 +120,7 @@ public class TodoProcessor extends AbstractProcessor {
 	}
     }
 
+    @SuppressWarnings("unused")
     private void ch11Q5(RoundEnvironment roundEnv) {
 	FileObject fileObject;
 	try {
